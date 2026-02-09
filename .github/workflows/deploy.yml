@@ -22,12 +22,11 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        # Installiamo tutto ignorando i conflitti di versioni
         run: npm install --legacy-peer-deps
 
       - name: Build
-        # Usiamo npx per forzare l'esecuzione di vite anche se i permessi locali falliscono
-        run: npx vite build
+        # Questo comando forza l'uso di una versione pulita di Vite bypassando i permessi locali
+        run: npx --package vite vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
