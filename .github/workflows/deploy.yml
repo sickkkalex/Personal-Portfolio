@@ -22,9 +22,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        # Usiamo --legacy-peer-deps perché Lovable ha molte dipendenze UI
-        # che potrebbero avere piccoli conflitti di versione
         run: npm install --legacy-peer-deps
+
+      - name: Set permissions
+        run: chmod +x ./node_modules/.bin/vite
 
       - name: Build
         run: npm run build
