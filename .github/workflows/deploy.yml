@@ -20,17 +20,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
-        # --legacy-peer-deps è fondamentale per i progetti Lovable
+        # Installazione pulita ignorando conflitti di versioni di Lovable
         run: npm install --legacy-peer-deps
 
-      - name: Fix permissions
-        # Questo sblocca l'errore "sh: 1: vite: Permission denied"
-        run: chmod +x ./node_modules/.bin/vite
-
       - name: Build
-        # Usiamo npx per essere sicuri che trovi l'eseguibile corretto
+        # Usiamo 'npx vite build' che cerca l'eseguibile nella cartella corretta
         run: npx vite build
 
       - name: Setup Pages
