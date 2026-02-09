@@ -22,13 +22,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        # --legacy-peer-deps risolve i conflitti tra le librerie UI di Lovable
         run: npm install --legacy-peer-deps
 
-      - name: Set permissions
+      - name: Fix permissions
+        # Questo sblocca l'errore "Permission denied" che abbiamo visto nel log
         run: chmod +x ./node_modules/.bin/vite
 
       - name: Build
-        run: npm run build
+        # npx garantisce che venga usato l'eseguibile corretto
+        run: npx vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
