@@ -20,14 +20,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
-        # Installazione pulita ignorando conflitti di versioni di Lovable
+        # Installiamo tutto ignorando i conflitti di versioni
         run: npm install --legacy-peer-deps
 
       - name: Build
-        # Usiamo 'npx vite build' che cerca l'eseguibile nella cartella corretta
+        # Usiamo npx per forzare l'esecuzione di vite anche se i permessi locali falliscono
         run: npx vite build
 
       - name: Setup Pages
