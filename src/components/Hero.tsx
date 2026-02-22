@@ -1,7 +1,9 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+    const { t } = useTranslation();
     const scrollToContent = () => {
         window.scrollTo({
             top: window.innerHeight,
@@ -14,15 +16,15 @@ const Hero = () => {
             <div className="container mx-auto">
                 <div className="max-w-5xl">
                     <p className="text-sm uppercase tracking-widest text-muted-foreground mb-6 slide-in-left">
-                        Multi-disciplinary Creative
+                        {t("hero.creative")}
                     </p>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-tight text-foreground">
-                        <span className="block stagger-1">Alessio Saulli —</span>
+                        <span className="block stagger-1">{t("hero.title")}</span>
                         <span className="text-muted-foreground">
-              <span className="block stagger-2">Crafting digital</span>
-              <span className="block stagger-3">experiences from</span>
-              <span className="block stagger-4">Bari, Italy.</span>
-            </span>
+                            <span className="block stagger-2">{t("hero.subtitle1")}</span>
+                            <span className="block stagger-3">{t("hero.subtitle2")}</span>
+                            <span className="block stagger-4">{t("hero.subtitle3")}</span>
+                        </span>
                     </h1>
 
                     {/* Decorative line */}
@@ -35,7 +37,7 @@ const Hero = () => {
                             className="group border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                             onClick={() => window.location.href = "mailto:hello@alessiosaulli.com"}
                         >
-                            <span>Let's Talk</span>
+                            <span>{t("hero.button")}</span>
                             <ArrowDown
                                 size={16}
                                 className="ml-2 group-hover:translate-y-1 transition-transform"
