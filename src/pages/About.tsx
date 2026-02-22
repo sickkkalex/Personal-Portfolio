@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 import portraitImage from "@/assets/me.jpg";
 
 const skills = [
@@ -13,34 +14,32 @@ const skills = [
     "Node.js",
 ];
 
-const experience = [
-    {
-        period: "2026 — Present",
-        title: "UNIBA - IT",
-        description:
-            "Studying IT at the University Aldo Moro in Bari.",
-    },
-    {
-        period: "2023 — Present",
-        title: "Web Designer/Developer",
-        description:
-            "Designing and developing websites for clients as a freelancer.",
-    },
-    {
-        period: "2021-2026",
-        title: "Secondary School - IT Science",
-        description:
-            "Studying IT and technological subject at school and doing projects and exames.",
-    },
-    {
-        period: "2018-2020",
-        title: "Graphic Designer for 'Oxygen', a Gaming eSport",
-        description:
-            "Designing custom graphics and layouts for the social media pages and players. ",
-    },
-];
-
 const About = () => {
+    const { t } = useTranslation();
+
+    const experience = [
+        {
+            period: t("about.exp1_period"),
+            title: t("about.exp1_title"),
+            description: t("about.exp1_desc"),
+        },
+        {
+            period: t("about.exp2_period"),
+            title: t("about.exp2_title"),
+            description: t("about.exp2_desc"),
+        },
+        {
+            period: t("about.exp3_period"),
+            title: t("about.exp3_title"),
+            description: t("about.exp3_desc"),
+        },
+        {
+            period: t("about.exp4_period"),
+            title: t("about.exp4_title"),
+            description: t("about.exp4_desc"),
+        },
+    ];
+
     return (
         <Layout>
             <section className="min-h-screen pt-32 pb-24 lg:pb-32 px-6 lg:px-12">
@@ -48,10 +47,10 @@ const About = () => {
                     {/* Header */}
                     <div className="mb-16">
                         <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4 fade-in-up">
-                            About
+                            {t("about.tag")}
                         </p>
                         <h1 className="text-5xl lg:text-7xl font-bold text-foreground fade-in-up-delay-1">
-                            The Story
+                            {t("about.title")}
                         </h1>
                     </div>
 
@@ -71,28 +70,12 @@ const About = () => {
                         {/* Bio Text */}
                         <div className="flex flex-col justify-center fade-in-up-delay-3">
                             <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">
-                                Less is more.
+                                {t("about.motto")}
                             </h2>
                             <div className="space-y-6 text-muted-foreground leading-relaxed">
-                                <p>
-                                    I’m Alessio Saulli, a multi-disciplinary creative based in Bari, Italy,
-                                    on a mission to make the digital world less complicated and a lot more beautiful.
-                                </p>
-                                <p>
-                                    With over 5 years of experience spanning web design, development, and graphics,
-                                    I thrive at the intersection of logical code and pixel-perfect aesthetics.
-                                    My philosophy is simple: great design should be invisible.
-                                    I believe a product truly works only when the user doesn’t have to stop
-                                    and think about how to use it. To me, minimalism isn’t just an aesthetic
-                                    it’s a strategy to cut through the noise and deliver results.
-                                </p>
-                                <p>
-                                    I enjoy collaborating with forward-thinking, tech-driven companies
-                                    that view innovation as an opportunity rather than a headache.
-                                    When I’m not optimizing lines of code or refining layouts,
-                                    you’ll find me capturing the Apulian coastline through my lens or diving into design theory.
-                                    Or, more likely, figuring out how to make my next creative challenge feel completely seamless.
-                                </p>
+                                <p>{t("about.bio_p1")}</p>
+                                <p>{t("about.bio_p2")}</p>
+                                <p>{t("about.bio_p3")}</p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +83,7 @@ const About = () => {
                     {/* Skills Section */}
                     <div className="mb-24">
                         <h2 className="text-2xl font-bold mb-8 text-foreground">
-                            Skills & Tools
+                            {t("about.skills_title")}
                         </h2>
                         <div className="flex flex-wrap gap-3">
                             {skills.map((skill) => (
@@ -118,7 +101,7 @@ const About = () => {
                     {/* Experience Section */}
                     <div>
                         <h2 className="text-2xl font-bold mb-8 text-foreground">
-                            Experience
+                            {t("about.exp_title")}
                         </h2>
                         <div className="space-y-0">
                             {experience.map((item, index) => (

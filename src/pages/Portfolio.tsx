@@ -1,70 +1,72 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import ProjectCard from "@/components/ProjectCard";
+import { useTranslation } from "react-i18next";
 import projectWeb1 from "@/assets/project-web-1.jpg";
 import projectGraphic1 from "@/assets/project-graphic-1.jpg";
 import projectWeb2 from "@/assets/project-web-2.jpg";
 
 type FilterCategory = "all" | "web" | "graphic";
 
-const projects = [
-    {
-        id: "1",
-        title: "E-Commerce Platform",
-        category: "Web Design",
-        filter: "web" as const,
-        image: projectWeb1,
-        tools: ["React", "TypeScript", "Tailwind CSS", "Figma"],
-    },
-    {
-        id: "2",
-        title: "Brand Identity System",
-        category: "Graphic Design",
-        filter: "graphic" as const,
-        image: projectGraphic1,
-        tools: ["Adobe Illustrator", "Photoshop", "InDesign"],
-    },
-    {
-        id: "3",
-        title: "Mobile App UI",
-        category: "Web Development",
-        filter: "web" as const,
-        image: projectWeb2,
-        tools: ["React Native", "TypeScript", "Figma", "Node.js"],
-    },
-    {
-        id: "4",
-        title: "Corporate Website",
-        category: "Web Design",
-        filter: "web" as const,
-        image: projectWeb1,
-        tools: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    },
-    {
-        id: "5",
-        title: "Logo Collection",
-        category: "Graphic Design",
-        filter: "graphic" as const,
-        image: projectGraphic1,
-        tools: ["Adobe Illustrator", "Photoshop"],
-    },
-    {
-        id: "6",
-        title: "SaaS Dashboard",
-        category: "Web Development",
-        filter: "web" as const,
-        image: projectWeb2,
-        tools: ["React", "TypeScript", "Supabase", "Recharts"],
-    },
-];
-
 const Portfolio = () => {
     const [activeFilter, setActiveFilter] = useState<FilterCategory>("all");
+    const { t } = useTranslation();
+
+    const projects = [
+        {
+            id: "1",
+            title: t("portfolio.project1"),
+            category: t("services.web_design.title"),
+            filter: "web" as const,
+            image: projectWeb1,
+            tools: ["React", "TypeScript", "Tailwind CSS", "Figma"],
+        },
+        {
+            id: "2",
+            title: t("portfolio.project2"),
+            category: t("services.graphic_design.title"),
+            filter: "graphic" as const,
+            image: projectGraphic1,
+            tools: ["Adobe Illustrator", "Photoshop", "InDesign"],
+        },
+        {
+            id: "3",
+            title: t("portfolio.project3"),
+            category: t("services.web_dev.title"),
+            filter: "web" as const,
+            image: projectWeb2,
+            tools: ["React Native", "TypeScript", "Figma", "Node.js"],
+        },
+        {
+            id: "4",
+            title: t("portfolio.project4"),
+            category: t("services.web_design.title"),
+            filter: "web" as const,
+            image: projectWeb1,
+            tools: ["Next.js", "Tailwind CSS", "Framer Motion"],
+        },
+        {
+            id: "5",
+            title: t("portfolio.project5"),
+            category: t("services.graphic_design.title"),
+            filter: "graphic" as const,
+            image: projectGraphic1,
+            tools: ["Adobe Illustrator", "Photoshop"],
+        },
+        {
+            id: "6",
+            title: t("portfolio.project6"),
+            category: t("services.web_dev.title"),
+            filter: "web" as const,
+            image: projectWeb2,
+            tools: ["React", "TypeScript", "Supabase", "Recharts"],
+        },
+    ];
 
     const filters: { label: string; value: FilterCategory }[] = [
-        { label: "All", value: "all" },
-        { label: "Web", value: "web" },
-        { label: "Graphic", value: "graphic" },
+        { label: t("portfolio.filter_all"), value: "all" },
+        { label: t("portfolio.filter_web"), value: "web" },
+        { label: t("portfolio.filter_graphic"), value: "graphic" },
     ];
 
     const filteredProjects =
@@ -79,10 +81,10 @@ const Portfolio = () => {
                     {/* Header */}
                     <div className="mb-16">
                         <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4 fade-in-up">
-                            Portfolio
+                            {t("portfolio.tag")}
                         </p>
                         <h1 className="text-5xl lg:text-7xl font-bold text-foreground fade-in-up-delay-1">
-                            Selected Work
+                            {t("portfolio.title")}
                         </h1>
                     </div>
 
@@ -92,11 +94,10 @@ const Portfolio = () => {
                             <button
                                 key={filter.value}
                                 onClick={() => setActiveFilter(filter.value)}
-                                className={`text-sm font-medium transition-all duration-300 link-underline ${
-                                    activeFilter === filter.value
-                                        ? "text-foreground"
-                                        : "text-muted-foreground hover:text-foreground"
-                                }`}
+                                className={`text-sm font-medium transition-all duration-300 link-underline ${activeFilter === filter.value
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
+                                    }`}
                             >
                                 {filter.label}
                             </button>
