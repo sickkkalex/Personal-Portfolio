@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import ProjectCard from "@/components/ProjectCard";
+import { useTranslation } from "react-i18next";
 import projectWeb1 from "@/assets/project-web-1.jpg";
 import projectGraphic1 from "@/assets/project-graphic-1.jpg";
 import projectWeb2 from "@/assets/project-web-2.jpg";
@@ -9,11 +10,12 @@ type FilterCategory = "all" | "web" | "graphic";
 
 const Portfolio = () => {
     const [activeFilter, setActiveFilter] = useState<FilterCategory>("all");
+    const { t } = useTranslation();
 
     const projects = [
         {
             id: "cinema-archive",
-            title: "Cinéma Archive",
+            title: t("projects.cinema_archive"),
             category: "Web Development & Design",
             filter: "web" as const,
             image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop",
@@ -22,48 +24,48 @@ const Portfolio = () => {
         },
         {
             id: "1",
-            title: "Piattaforma E-Commerce",
-            category: "Web Design",
+            title: t("portfolio.project1"),
+            category: t("services.web_design.title"),
             filter: "web" as const,
             image: projectWeb1,
             tools: ["React", "TypeScript", "Tailwind CSS", "Figma"],
         },
         {
             id: "2",
-            title: "Sistema di Identità di Marca",
-            category: "Graphic Design",
+            title: t("portfolio.project2"),
+            category: t("services.graphic_design.title"),
             filter: "graphic" as const,
             image: projectGraphic1,
             tools: ["Adobe Illustrator", "Photoshop", "InDesign"],
         },
         {
             id: "3",
-            title: "Interfaccia App Mobile",
-            category: "Sviluppo Web",
+            title: t("portfolio.project3"),
+            category: t("services.web_dev.title"),
             filter: "web" as const,
             image: projectWeb2,
             tools: ["React Native", "TypeScript", "Figma", "Node.js"],
         },
         {
             id: "4",
-            title: "Sito Web Aziendale",
-            category: "Web Design",
+            title: t("portfolio.project4"),
+            category: t("services.web_design.title"),
             filter: "web" as const,
             image: projectWeb1,
             tools: ["Next.js", "Tailwind CSS", "Framer Motion"],
         },
         {
             id: "5",
-            title: "Collezione di Loghi",
-            category: "Graphic Design",
+            title: t("portfolio.project5"),
+            category: t("services.graphic_design.title"),
             filter: "graphic" as const,
             image: projectGraphic1,
             tools: ["Adobe Illustrator", "Photoshop"],
         },
         {
             id: "6",
-            title: "Dashboard SaaS",
-            category: "Sviluppo Web",
+            title: t("portfolio.project6"),
+            category: t("services.web_dev.title"),
             filter: "web" as const,
             image: projectWeb2,
             tools: ["React", "TypeScript", "Supabase", "Recharts"],
@@ -71,9 +73,9 @@ const Portfolio = () => {
     ];
 
     const filters: { label: string; value: FilterCategory }[] = [
-        { label: "Tutti", value: "all" },
-        { label: "Web", value: "web" },
-        { label: "Grafica", value: "graphic" },
+        { label: t("portfolio.filter_all"), value: "all" },
+        { label: t("portfolio.filter_web"), value: "web" },
+        { label: t("portfolio.filter_graphic"), value: "graphic" },
     ];
 
     const filteredProjects =
@@ -88,10 +90,10 @@ const Portfolio = () => {
                     {/* Header */}
                     <div className="mb-16">
                         <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4 fade-in-up">
-                            Portfolio
+                            {t("portfolio.tag")}
                         </p>
                         <h1 className="text-5xl lg:text-7xl font-bold text-foreground fade-in-up-delay-1">
-                            Lavori Selezionati
+                            {t("portfolio.title")}
                         </h1>
                     </div>
 

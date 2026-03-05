@@ -1,22 +1,25 @@
 import { Palette, Code, PenTool } from "lucide-react";
 import ServiceCard from "./ServiceCard";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+    const { t } = useTranslation();
+
     const services = [
         {
             icon: Palette,
-            title: "Web Design",
-            description: "Creazione di design splendidi e incentrati sull'utente che privilegiano semplicità e funzionalità. Ogni pixel ha uno scopo.",
+            title: t("services.web_design.title"),
+            description: t("services.web_design.desc"),
         },
         {
             icon: Code,
-            title: "Sviluppo Web",
-            description: "Costruzione di siti web veloci, reattivi e accessibili utilizzando tecnologie moderne. Codice pulito che scala.",
+            title: t("services.web_dev.title"),
+            description: t("services.web_dev.desc"),
         },
         {
             icon: PenTool,
-            title: "Graphic Design",
-            description: "Creazione di identità visive e materiali di marca che comunicano chiaramente e lasciano impressioni durature.",
+            title: t("services.graphic_design.title"),
+            description: t("services.graphic_design.desc"),
         },
     ];
 
@@ -25,10 +28,10 @@ const Services = () => {
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="mb-16">
                     <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
-                        Cosa Faccio
+                        {t("services.tag")}
                     </p>
                     <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-                        Servizi
+                        {t("services.title")}
                     </h2>
                 </div>
 

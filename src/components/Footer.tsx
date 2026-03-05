@@ -1,7 +1,9 @@
 import { Github, Linkedin, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const { t } = useTranslation();
 
     const socialLinks = [
         { icon: Linkedin, href: "https://www.linkedin.com/in/alessio-saulli-07b189399/?originalSubdomain=it", label: "LinkedIn" },
@@ -15,7 +17,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     {/* Copyright */}
                     <p className="text-sm text-muted-foreground">
-                        © {currentYear} Alessio Saulli. Tutti i diritti riservati.
+                        © {currentYear} Alessio Saulli. {t("footer.rights")}
                     </p>
 
                     {/* Social Links */}
