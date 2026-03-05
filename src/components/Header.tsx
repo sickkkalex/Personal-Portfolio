@@ -2,14 +2,11 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.svg";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { useTranslation } from "react-i18next";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
-    const { t } = useTranslation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,9 +22,9 @@ const Header = () => {
     }, [location]);
 
     const navLinks = [
-        { to: "/", label: t("nav.home", "Home") },
-        { to: "/portfolio", label: t("nav.portfolio", "Portfolio") },
-        { to: "/about", label: t("nav.about", "About") },
+        { to: "/", label: "Home" },
+        { to: "/portfolio", label: "Portfolio" },
+        { to: "/about", label: "Chi sono" },
     ];
 
     const isActive = (path: string) => location.pathname === path;
@@ -35,8 +32,8 @@ const Header = () => {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-background/95 backdrop-blur-sm border-b border-border"
-                    : "bg-transparent"
+                ? "bg-background/95 backdrop-blur-sm border-b border-border"
+                : "bg-transparent"
                 }`}
         >
             <nav className="container mx-auto px-6 lg:px-12">
@@ -60,14 +57,13 @@ const Header = () => {
                                 key={link.to}
                                 to={link.to}
                                 className={`text-sm font-medium tracking-wide transition-opacity link-underline ${isActive(link.to)
-                                        ? "text-foreground"
-                                        : "text-muted-foreground hover:text-foreground"
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
                                     }`}
                             >
                                 {link.label}
                             </Link>
                         ))}
-                        <LanguageSwitcher />
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -89,16 +85,13 @@ const Header = () => {
                                     key={link.to}
                                     to={link.to}
                                     className={`text-2xl font-medium transition-opacity ${isActive(link.to)
-                                            ? "text-foreground"
-                                            : "text-muted-foreground hover:text-foreground"
+                                        ? "text-foreground"
+                                        : "text-muted-foreground hover:text-foreground"
                                         }`}
                                 >
                                     {link.label}
                                 </Link>
                             ))}
-                            <div className="pt-4 border-t border-border">
-                                <LanguageSwitcher />
-                            </div>
                         </div>
                     </div>
                 )}

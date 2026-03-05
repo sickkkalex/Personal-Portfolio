@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     {/* Copyright */}
                     <p className="text-sm text-muted-foreground">
-                        © {currentYear} Alessio Saulli. All rights reserved.
+                        © {currentYear} Alessio Saulli. Tutti i diritti riservati.
                     </p>
 
                     {/* Social Links */}

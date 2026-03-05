@@ -4,10 +4,8 @@ import Services from "@/components/Services";
 import FeaturedWork from "@/components/FeaturedWork";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTranslation } from "react-i18next";
 
 const Index = () => {
-    const { t } = useTranslation();
     return (
         <Layout>
             <Hero />
@@ -18,10 +16,10 @@ const Index = () => {
             <section className="py-24 lg:py-32 border-t border-border bg-background">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground">
-                        {t("index.cta.title")}
+                        Hai un progetto in mente?
                     </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-                        {t("index.cta.text")}
+                        Collaboriamo per dare vita alla tua visione con un design curato e codice pulito.
                     </p>
                     <Button
                         variant="default"
@@ -31,7 +29,7 @@ const Index = () => {
                             (window.location.href = "mailto:hello@alessiosaulli.com")
                         }
                     >
-                        <span>{t("index.cta.button")}</span>
+                        <span>Contattami</span>
                         <ArrowRight
                             size={16}
                             className="ml-2 group-hover:translate-x-1 transition-transform"
