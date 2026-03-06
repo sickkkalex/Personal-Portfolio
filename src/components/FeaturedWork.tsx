@@ -12,7 +12,7 @@ const FeaturedWork = () => {
             id: "cinema-archive",
             title: t("projects.cinema_archive"),
             category: "Web Development & Design",
-            image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop",
+            image: "/cinemarchive.png",
             external: "https://cinemaarchive.vercel.app"
         },
         {
@@ -67,7 +67,7 @@ const FeaturedWork = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover group-hover:blur-[2px] transition-all duration-500"
                                 />
                                 <div className="absolute inset-0 bg-background/0 group-hover:bg-background/70 transition-all duration-500 flex items-center justify-center">
                                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">

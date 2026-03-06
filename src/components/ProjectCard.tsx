@@ -16,7 +16,7 @@ const ProjectCard = ({ id, title, category, image, tools = [], isLarge = false, 
             <img
                 src={image}
                 alt={title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:blur-[2px] transition-all duration-500"
             />
             <div className="absolute inset-0 bg-background/0 group-hover:bg-background/90 transition-all duration-500 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-6">
