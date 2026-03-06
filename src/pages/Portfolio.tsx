@@ -23,6 +23,15 @@ const Portfolio = () => {
             external: "https://cinemaarchive.vercel.app"
         },
         {
+            id: "webmastery",
+            title: "WebMastery",
+            category: "Web Development & Design",
+            filter: "web" as const,
+            image: "/webmastery.png",
+            tools: ["React", "TypeScript", "Tailwind CSS"],
+            external: "https://webmastery-2.vercel.app"
+        },
+        {
             id: "1",
             title: t("portfolio.project1"),
             category: t("services.web_design.title"),

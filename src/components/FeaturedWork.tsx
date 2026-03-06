@@ -16,6 +16,13 @@ const FeaturedWork = () => {
             external: "https://cinemaarchive.vercel.app"
         },
         {
+            id: "webmastery",
+            title: "WebMastery",
+            category: "Web Development & Design",
+            image: "/webmastery.png",
+            external: "https://webmastery-2.vercel.app"
+        },
+        {
             id: "1",
             title: t("projects.ecommerce"),
             category: t("services.web_design.title"),
