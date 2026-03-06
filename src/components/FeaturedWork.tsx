@@ -23,6 +23,13 @@ const FeaturedWork = () => {
             external: "https://webmastery-2.vercel.app"
         },
         {
+            id: "educazione-civica",
+            title: "Educazione Civica",
+            category: "Web Development & Design",
+            image: "/edcivica.png",
+            external: "https://alessiosaullieducazionecivica.vercel.app/"
+        },
+        {
             id: "1",
             title: t("projects.ecommerce"),
             category: t("services.web_design.title"),

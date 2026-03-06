@@ -32,6 +32,15 @@ const Portfolio = () => {
             external: "https://webmastery-2.vercel.app"
         },
         {
+            id: "educazione-civica",
+            title: "Educazione Civica",
+            category: "Web Development & Design",
+            filter: "web" as const,
+            image: "/edcivica.png",
+            tools: ["React", "TypeScript", "Tailwind CSS"],
+            external: "https://alessiosaullieducazionecivica.vercel.app/"
+        },
+        {
             id: "1",
             title: t("portfolio.project1"),
             category: t("services.web_design.title"),
