@@ -1,44 +1,36 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
-import { useTranslation } from "react-i18next";
+export default function Footer() {
+  return (
+    <footer style={{
+      padding: '4rem 2.5rem 3rem',
+      borderTop: '1px solid #ebebeb',
+      display: 'flex', flexDirection: 'column',
+      gap: '2.5rem',
+    }}>
+      <div style={{
+        display: 'flex', justifyContent: 'space-between',
+        alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem',
+      }}>
+        <img src="/logo.svg" alt="logo" style={{ height: '36px', opacity: 0.4 }} />
+        <p style={{
+          fontSize: '13px', fontStyle: 'italic', color: '#bbb',
+          maxWidth: '380px', lineHeight: 1.65, textAlign: 'right', letterSpacing: '-0.01em',
+        }}>
+          "la semplicità è la sofisticazione suprema."
+        </p>
+      </div>
 
-const Footer = () => {
-    const currentYear = new Date().getFullYear();
-    const { t } = useTranslation();
-
-    const socialLinks = [
-        { icon: Linkedin, href: "https://www.linkedin.com/in/alessio-saulli-07b189399/?originalSubdomain=it", label: "LinkedIn" },
-        { icon: Github, href: "https://github.com/saullialessio", label: "GitHub" },
-        { icon: Instagram, href: "https://www.instagram.com/alexssdesign_", label: "Instagram" },
-    ];
-
-    return (
-        <footer className="border-t border-border bg-background">
-            <div className="container mx-auto px-6 lg:px-12 py-12">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                    {/* Copyright */}
-                    <p className="text-sm text-muted-foreground">
-                        © {currentYear} Alessio Saulli. {t("footer.rights")}
-                    </p>
-
-                    {/* Social Links */}
-                    <div className="flex items-center gap-6">
-                        {socialLinks.map((social) => (
-                            <a
-                                key={social.label}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                                aria-label={social.label}
-                            >
-                                <social.icon size={20} />
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
-};
-
-export default Footer;
+      <div style={{
+        display: 'flex', justifyContent: 'space-between',
+        alignItems: 'center', flexWrap: 'wrap', gap: '1rem',
+        paddingTop: '2rem', borderTop: '1px solid #f5f5f5',
+      }}>
+        <p style={{ fontSize: '11px', color: '#ccc', letterSpacing: '0.02em' }}>
+          © 2026 alessio saulli — tutti i diritti riservati
+        </p>
+        <p style={{ fontSize: '11px', color: '#ccc', letterSpacing: '0.02em' }}>
+          design & sviluppo · alessio saulli
+        </p>
+      </div>
+    </footer>
+  )
+}
