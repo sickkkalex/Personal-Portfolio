@@ -364,6 +364,7 @@ export default function BioPage() {
               ))}
             </div>
           </div>
+          </div>
         </section>
 
         {/* ── ESPERIENZA ── */}
@@ -403,6 +404,7 @@ export default function BioPage() {
               <LangBar lang="italiano" level="madrelingua" pct={100} delay={0}/>
               <LangBar lang="inglese" level="c1 — b2.3 certificato" pct={82} delay={160}/>
             </div>
+          </div>
           </div>
         </section>
 
