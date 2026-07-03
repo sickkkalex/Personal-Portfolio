@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:svg="http://www.w3.org/2000/svg" viewBox="115 150 280 210">
+<svg id="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 505.97 488.71">
   <defs>
     <style>
       .st0 {
-        fill: #fff;
-        stroke: #fff;
+        fill: #000;
+        stroke: #000;
         stroke-miterlimit: 10;
       }
     </style>

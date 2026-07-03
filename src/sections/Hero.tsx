@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeroVisual from '../components/HeroVisual'
+import StatusBadge from '../components/StatusBadge'
+import { playSound } from '../hooks/useSounds'
 
 function LineReveal({ children, delay = 0, style = {} }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
   const [revealed, setRevealed] = useState(false)
@@ -77,7 +79,11 @@ export default function Hero() {
       <div className="hero-grid" style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', zIndex: 1 }}>
         {/* left column: content */}
         <div style={{ maxWidth: '680px', position: 'relative' }}>
-          <LineReveal delay={0} style={{ display: 'block', marginBottom: '1.6rem' }}>
+          <LineReveal delay={0} style={{ display: 'block', marginBottom: '1.2rem' }}>
+            <StatusBadge variant="tooltip" />
+          </LineReveal>
+
+          <LineReveal delay={60} style={{ display: 'block', marginBottom: '1.2rem' }}>
             <span style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '0.09em', color: '#aaa' }}>
               alessio saulli · 2026
             </span>
@@ -106,13 +112,15 @@ export default function Hero() {
           <LineReveal delay={420} style={{ display: 'block' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               <Link to="/bio" className="mag-btn" style={btnPrimary}
-                onMouseEnter={e => (e.currentTarget.style.opacity = '0.82')}
-                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}>
+                onMouseEnter={e => { e.currentTarget.style.opacity = '0.82'; playSound('hover') }}
+                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+                onClick={() => playSound('click')}>
                 scopri di più
               </Link>
               <a href="#progetti" className="mag-btn" style={btnSecondary}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#000'; e.currentTarget.style.background = '#fafafa' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = '#d8d8d8'; e.currentTarget.style.background = 'transparent' }}>
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#000'; e.currentTarget.style.background = '#fafafa'; playSound('hover') }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#d8d8d8'; e.currentTarget.style.background = 'transparent' }}
+                onClick={() => playSound('click')}>
                 i miei progetti →
               </a>
             </div>

@@ -198,6 +198,18 @@ const PROJECTS: ProjectData[] = [
     description:
       'Portfolio digitale progettato e sviluppato per la presentazione all\'Esame di Stato 2025/2026 presso l\'IISS Volta De Gemmis di Bitonto.\n\nIl sito raccoglie le tappe fondamentali del percorso scolastico: l\'Educazione Civica con approfondimenti su Agenda 2030, cittadinanza digitale e salute mentale; i percorsi PCTO — tra cui il tirocinio Erasmus+ a Creta come Graphic Designer & Developer presso MD HELLAS e il soggiorno studio a Dublino; e i Capolavori, lavori personali realizzati negli ultimi tre anni.\n\nRealizzato interamente da zero con HTML, CSS e JavaScript vanilla, con design responsivo e navigazione fluida. Distribuito su Vercel.',
   },
+  {
+    id: 'nimbuscloud',
+    title: 'nimbuscloud',
+    subtitle: 'cloud storage platform · self-hosted',
+    year: '2026',
+    tags: ['react', 'node.js', 'postgresql', 'docker', 'socket.io', 'prisma'],
+    image: '/nimbuscloud.png',
+    link: 'https://github.com/sickkkalex/NimbusCloud',
+    linkLabel: 'vedi su github',
+    description:
+      'Piattaforma di cloud storage personale full-stack, progettata e sviluppata da zero con un\'architettura moderna e scalabile.\n\nFunzionalità principali: upload e gestione file con cartelle annidate, link di condivisione pubblici, reset password via OTP via email, avatar personalizzato, chat di supporto real-time con Socket.io e sistema di abbonamenti Free/Premium con quota storage differenziata.\n\nBackend in Node.js con Express e Prisma ORM su PostgreSQL, frontend in React con design mobile-first. Tutto containerizzato con Docker per il deploy self-hosted.',
+  },
 ]
 
 /* ─── PAGE ─── */

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IconChevron, IconInstagram, IconGithub, IconLinkedin, IconMail } from '../icons'
+import { playSound } from '../hooks/useSounds'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -58,22 +59,24 @@ export default function Navbar() {
       <div className="scroll-progress" style={{ transform: `scaleX(${progress})` }} />
       <nav style={navStyle}>
         <a href="#hero" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="/logo.svg" alt="logo" style={{ height: '48px' }} />
+          <img src="/logo.svg" alt="logo" style={{ height: '56px' }} />
         </a>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.2rem' }}>
-          <Link to="/" className="nav-link" style={linkStyle}>home</Link>
-          <Link to="/bio" className="nav-link" style={linkStyle}>bio</Link>
-          <Link to="/progetti" className="nav-link" style={linkStyle}>progetti</Link>
+          <Link to="/" className="nav-link" style={linkStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>home</Link>
+          <Link to="/bio" className="nav-link" style={linkStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>bio</Link>
+          <Link to="/progetti" className="nav-link" style={linkStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>progetti</Link>
+          <Link to="/note" className="nav-link" style={linkStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>note</Link>
+          <a href="#contact" className="nav-link" style={linkStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>contatti</a>
 
           {/* social */}
           <div className="dropdown-trigger" style={{ position: 'relative' }}>
-            <button style={btnStyle}>social <IconChevron /></button>
+            <button style={btnStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('open')}>social <IconChevron /></button>
             <div className="dropdown-menu" style={dropStyle}>
               {[
                 { label: 'instagram', icon: <IconInstagram />, href: 'https://www.instagram.com/sickkkalex/' },
-                { label: 'github',    icon: <IconGithub />,    href: 'https://github.com/sickkkalex' },
-                { label: 'linkedin',  icon: <IconLinkedin />,  href: 'https://www.linkedin.com/in/alessio-saulli-07b189399/' },
+                { label: 'github', icon: <IconGithub />, href: 'https://github.com/sickkkalex' },
+                { label: 'linkedin', icon: <IconLinkedin />, href: 'https://www.linkedin.com/in/alessio-saulli-07b189399/' },
               ].map(it => (
                 <a key={it.label} href={it.href} target="_blank" rel="noreferrer"
                   className="dropdown-item" style={dropItemStyle}>
@@ -85,11 +88,11 @@ export default function Navbar() {
 
           {/* recapiti */}
           <div className="dropdown-trigger" style={{ position: 'relative' }}>
-            <button style={btnStyle}>recapiti <IconChevron /></button>
+            <button style={btnStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('open')}>recapiti <IconChevron /></button>
             <div className="dropdown-menu" style={{ ...dropStyle, minWidth: '220px' }}>
               {[
-                { label: 'email privata',       sub: 'alessiosaulli4@gmail.com',   href: 'mailto:alessiosaulli4@gmail.com' },
-                { label: 'email professionale', sub: 'alessiosaulli@outlook.com', href: 'mailto:alessiosaulli@outlook.com' },
+                { label: 'email privata', sub: 'alessiosaulli4@gmail.com', href: 'mailto:alessiosaulli4@gmail.com' },
+                { label: 'email professionale', sub: 'alessiosaulli@outlook.it', href: 'mailto:alessiosaulli@outlook.it' },
               ].map(it => (
                 <a key={it.label} href={it.href}
                   className="dropdown-item" style={dropItemStyle}>
