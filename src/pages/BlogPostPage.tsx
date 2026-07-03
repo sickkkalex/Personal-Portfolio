@@ -87,7 +87,7 @@ export default function BlogPostPage() {
 
       <Navbar />
       <main style={{ minHeight: '100svh', paddingTop: '76px' }}>
-        <article style={{ maxWidth: '680px', margin: '0 auto', padding: '5rem 2.5rem 6rem' }}>
+        <article className="blog-article" style={{ maxWidth: '680px', margin: '0 auto', padding: '5rem 2.5rem 6rem' }}>
 
           {/* back link */}
           <Link

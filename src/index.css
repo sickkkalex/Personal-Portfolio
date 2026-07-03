@@ -240,3 +240,77 @@ body.hovering .cursor-dot  { width: 4px; height: 4px; }
   will-change: transform;
 }
 
+/* ── Mobile responsive ── */
+@media (max-width: 767px) {
+
+  /* global section padding */
+  section, main {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* hero */
+  #hero {
+    padding-top: 90px !important;
+    padding-bottom: 3rem !important;
+    min-height: 100svh;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .hero-visual-container {
+    min-height: 260px !important;
+    max-width: 260px !important;
+  }
+
+  /* stats: 3 cols stay but compact */
+  .stat-num { font-size: 2rem !important; }
+
+  /* timeline */
+  #timeline { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+
+  /* terminal */
+  #terminal { padding: 4rem 1.25rem !important; }
+
+  /* contact */
+  #contact { padding: 5rem 1.25rem 4rem !important; }
+  #contact > div > div {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+
+  /* footer */
+  footer { padding: 3rem 1.25rem 2.5rem !important; }
+  footer > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  footer > div:first-child > p { text-align: left !important; }
+
+  /* scroll indicator: hide on mobile */
+  #hero > div:nth-child(2) { display: none !important; }
+
+  /* blog pages */
+  .blog-article { padding: 3rem 1.25rem 4rem !important; }
+
+  /* 404 page */
+  .not-found-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* marquee font size */
+  .marquee-track span { font-size: 2rem !important; }
+}
+
+@media (max-width: 480px) {
+  /* extra small: tighten hero text */
+  #hero h1 { font-size: 2.4rem !important; }
+
+  /* stats collapse to single column on very small screens */
+  #stats-grid { grid-template-columns: 1fr !important; }
+
+  /* terminal font size */
+  #terminal .term-body { font-size: 11px !important; }
+}

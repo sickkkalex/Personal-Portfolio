@@ -153,7 +153,7 @@ export default function NotFound() {
           WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%)',
         }} />
 
-        <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '900px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div className="not-found-grid" style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '900px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
 
           {/* ── Left: 404 number ── */}
           <div>
