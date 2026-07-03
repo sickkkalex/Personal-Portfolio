@@ -225,7 +225,7 @@ export default function ProgettiPage() {
       <main style={{ paddingTop: '76px', overflowX: 'hidden' }}>
 
         {/* HERO */}
-        <section style={{
+        <section className="progetti-hero" style={{
           minHeight: '86vh', display: 'flex', flexDirection: 'column',
           justifyContent: 'center', padding: '6rem 2.5rem 4rem',
           borderBottom: '1px solid #ebebeb', position: 'relative', overflow: 'hidden',
@@ -295,6 +295,7 @@ export default function ProgettiPage() {
             <Label>tutti i progetti</Label>
 
             <div ref={listRef as React.RefObject<HTMLDivElement>}
+              className="progetti-grid"
               style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.2rem' }}>
               {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} delay={i * 90} />)}
             </div>

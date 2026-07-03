@@ -257,7 +257,7 @@ export default function BioPage() {
       <main style={{ paddingTop: '76px', overflowX: 'hidden' }}>
 
         {/* ── HERO ── */}
-        <section style={{
+        <section className="bio-hero" style={{
           minHeight: '86vh', display: 'flex', flexDirection: 'column',
           justifyContent: 'center', padding: '6rem 2.5rem 4rem',
           borderBottom: '1px solid #ebebeb', position: 'relative', overflow: 'hidden',
@@ -322,8 +322,9 @@ export default function BioPage() {
         </section>
 
         {/* ── PROFILO ── */}
-        <section style={{ padding: '7rem 2.5rem', background: '#fff' }}>
-          <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
+        <section className="bio-section" style={{ padding: '7rem 2.5rem', background: '#fff' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <div className="bio-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
 
             <div ref={aboutRef as React.RefObject<HTMLDivElement>}>
               <Label>su di me</Label>
@@ -366,7 +367,7 @@ export default function BioPage() {
         </section>
 
         {/* ── ESPERIENZA ── */}
-        <section style={{ padding: '7rem 2.5rem', background: '#fafafa', borderTop: '1px solid #ebebeb' }}>
+        <section className="bio-section" style={{ padding: '7rem 2.5rem', background: '#fafafa', borderTop: '1px solid #ebebeb' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <Label>esperienza professionale</Label>
             <p style={{ fontSize: '12px', color: '#bbb', marginBottom: '1.5rem', letterSpacing: '0.02em' }}>clicca su una voce per approfondire</p>
@@ -377,7 +378,7 @@ export default function BioPage() {
         </section>
 
         {/* ── ISTRUZIONE ── */}
-        <section style={{ padding: '7rem 2.5rem', background: '#fff', borderTop: '1px solid #ebebeb' }}>
+        <section className="bio-section" style={{ padding: '7rem 2.5rem', background: '#fff', borderTop: '1px solid #ebebeb' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <Label>istruzione e formazione</Label>
             <p style={{ fontSize: '12px', color: '#bbb', marginBottom: '1.5rem', letterSpacing: '0.02em' }}>clicca su una voce per approfondire</p>
@@ -388,8 +389,9 @@ export default function BioPage() {
         </section>
 
         {/* ── COMPETENZE ── */}
-        <section style={{ padding: '7rem 2.5rem', background: '#fafafa', borderTop: '1px solid #ebebeb' }}>
-          <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
+        <section className="bio-section" style={{ padding: '7rem 2.5rem', background: '#fafafa', borderTop: '1px solid #ebebeb' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <div className="bio-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
             <div>
               <Label>competenze tecniche</Label>
               <SkillGroup cat="frontend" tags={['html', 'css', 'javascript', 'typescript', 'react']} delay={0}/>
