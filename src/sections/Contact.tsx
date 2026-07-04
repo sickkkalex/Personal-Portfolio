@@ -208,7 +208,7 @@ export default function Contact() {
       `}</style>
 
       <section
-        id="contact"
+        id="contatti"
         style={{
           padding: '9rem 2.5rem 8rem',
           borderTop: '1px solid #ebebeb',

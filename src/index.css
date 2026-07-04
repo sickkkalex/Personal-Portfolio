@@ -274,8 +274,8 @@ body.hovering .cursor-dot  { width: 4px; height: 4px; }
   #terminal { padding: 4rem 1.25rem !important; }
 
   /* contact */
-  #contact { padding: 5rem 1.25rem 4rem !important; }
-  #contact > div > div {
+  #contatti { padding: 5rem 1.25rem 4rem !important; }
+  #contatti > div > div {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
   }

@@ -123,7 +123,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a href="#contact" className="nav-link" style={linkStyle}
+          <a href="/#contatti" className="nav-link" style={linkStyle}
             onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>
             contatti
           </a>
@@ -208,7 +208,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a href="#contact" className="nav-mobile-link" onClick={() => setMenuOpen(false)}>
+          <a href="/#contatti" className="nav-mobile-link" onClick={() => setMenuOpen(false)}>
             contatti
           </a>
         </nav>
