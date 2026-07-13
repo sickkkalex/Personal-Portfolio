@@ -7,22 +7,25 @@ export default function CustomCursor() {
   useEffect(() => {
     const dot = dotRef.current!
     const ring = ringRef.current!
-    const pos = { x: -100, y: -100 }
+    const pos    = { x: -100, y: -100 }
+    const dotPos = { x: -100, y: -100 }
     const ringPos = { x: -100, y: -100 }
     let raf: number
 
     const onMove = (e: MouseEvent) => {
       pos.x = e.clientX; pos.y = e.clientY
-      dot.style.left = e.clientX + 'px'
-      dot.style.top = e.clientY + 'px'
     }
 
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t
     const animate = () => {
-      ringPos.x = lerp(ringPos.x, pos.x, 0.11)
-      ringPos.y = lerp(ringPos.y, pos.y, 0.11)
+      dotPos.x  = lerp(dotPos.x,  pos.x, 0.55)
+      dotPos.y  = lerp(dotPos.y,  pos.y, 0.55)
+      ringPos.x = lerp(ringPos.x, pos.x, 0.13)
+      ringPos.y = lerp(ringPos.y, pos.y, 0.13)
+      dot.style.left  = dotPos.x  + 'px'
+      dot.style.top   = dotPos.y  + 'px'
       ring.style.left = ringPos.x + 'px'
-      ring.style.top = ringPos.y + 'px'
+      ring.style.top  = ringPos.y + 'px'
       raf = requestAnimationFrame(animate)
     }
 

@@ -1,21 +1,13 @@
-import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../sections/Hero'
 import Stats from '../sections/Stats'
 import Marquee from '../components/Marquee'
 import Timeline from '../sections/Timeline'
-
 import Terminal from '../sections/Terminal'
 import Contact from '../sections/Contact'
 import Footer from '../components/Footer'
 
 export default function Home() {
-  useEffect(() => {
-    if (window.location.pathname === '/' && !window.location.hash) {
-      window.history.replaceState(null, '', '#hero')
-    }
-  }, [])
-
   return (
     <>
       <Navbar />
@@ -29,4 +21,3 @@ export default function Home() {
     </>
   )
 }
-

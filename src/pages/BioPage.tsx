@@ -74,6 +74,7 @@ function Modal({ data, onClose }: { data: ModalData; onClose: () => void }) {
     >
       <div
         onClick={e => e.stopPropagation()}
+        data-lenis-prevent
         style={{
           background: '#fff', borderRadius: 24, overflow: 'hidden',
           maxWidth: 580, width: '100%',

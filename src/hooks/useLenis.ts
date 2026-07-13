@@ -8,13 +8,28 @@ export function useLenis() {
   const location = useLocation()
 
   useEffect(() => {
+    // Prevent browser from restoring scroll position or jumping to hash on load
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+
+    // Force native scroll to top BEFORE Lenis init so there's no flash
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
     // init Lenis once
     lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.6,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
       orientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.5,
     })
+
+    // Immediately tell Lenis we're at the top too
+    lenis.scrollTo(0, { immediate: true })
 
     let raf: number
     function loop(time: number) {
@@ -32,6 +47,7 @@ export function useLenis() {
 
   // scroll to top on route change
   useEffect(() => {
+    window.scrollTo(0, 0)
     lenis?.scrollTo(0, { immediate: true })
   }, [location.pathname])
 }

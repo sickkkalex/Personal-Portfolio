@@ -61,7 +61,7 @@ function ProjectModal({ data, onClose }: { data: ProjectData; onClose: () => voi
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       padding: '2rem', animation: 'bgBlur 0.3s ease both',
     }}>
-      <div onClick={e => e.stopPropagation()} style={{
+      <div onClick={e => e.stopPropagation()} data-lenis-prevent style={{
         background: '#fff', borderRadius: 24, overflow: 'hidden',
         maxWidth: 660, width: '100%',
         boxShadow: '0 40px 100px rgba(0,0,0,0.22), 0 4px 20px rgba(0,0,0,0.08)',
@@ -186,18 +186,6 @@ function ProjectCard({ project, index, delay = 0 }: { project: ProjectData; inde
 
 /* ─── DATA ─── */
 const PROJECTS: ProjectData[] = [
-  {
-    id: 'esame-di-stato',
-    title: 'portfolio esame di stato',
-    subtitle: 'web portfolio · iiss volta de gemmis',
-    year: '2026',
-    tags: ['html', 'css', 'javascript', 'vercel', 'responsive design'],
-    image: '/esame.png',
-    link: 'https://alessiosaulliesame.vercel.app/',
-    linkLabel: 'visita il sito',
-    description:
-      'Portfolio digitale progettato e sviluppato per la presentazione all\'Esame di Stato 2025/2026 presso l\'IISS Volta De Gemmis di Bitonto.\n\nIl sito raccoglie le tappe fondamentali del percorso scolastico: l\'Educazione Civica con approfondimenti su Agenda 2030, cittadinanza digitale e salute mentale; i percorsi PCTO — tra cui il tirocinio Erasmus+ a Creta come Graphic Designer & Developer presso MD HELLAS e il soggiorno studio a Dublino; e i Capolavori, lavori personali realizzati negli ultimi tre anni.\n\nRealizzato interamente da zero con HTML, CSS e JavaScript vanilla, con design responsivo e navigazione fluida. Distribuito su Vercel.',
-  },
   {
     id: 'nimbuscloud',
     title: 'nimbuscloud',

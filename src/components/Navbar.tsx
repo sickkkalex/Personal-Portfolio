@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { IconChevron, IconInstagram, IconGithub, IconLinkedin, IconMail } from '../icons'
 import { playSound } from '../hooks/useSounds'
 
@@ -8,6 +8,21 @@ export default function Navbar() {
   const [progress, setProgress] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+
+  const goToContatti = (e: React.MouseEvent) => {
+    e.preventDefault()
+    playSound('click')
+    setMenuOpen(false)
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })
+      }, 400)
+    } else {
+      document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   // close mobile menu on route change
   useEffect(() => { setMenuOpen(false) }, [location])
@@ -111,9 +126,10 @@ export default function Navbar() {
       <div className="scroll-progress" style={{ transform: `scaleX(${progress})` }} />
 
       <nav style={navStyle}>
-        <a href="/#hero" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+          onClick={() => { playSound('click'); window.scrollTo({ top: 0 }) }}>
           <img src="/logo.svg" alt="logo" style={{ height: '52px' }} />
-        </a>
+        </Link>
 
         {/* ── Desktop nav ── */}
         <div className="nav-desktop" style={{ alignItems: 'center', gap: '2.2rem' }}>
@@ -124,7 +140,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a href="/#contatti" className="nav-link" style={linkStyle}
-            onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>
+            onMouseEnter={() => playSound('hover')} onClick={goToContatti}>
             contatti
           </a>
 
@@ -208,7 +224,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a href="/#contatti" className="nav-mobile-link" onClick={() => setMenuOpen(false)}>
+          <a href="/#contatti" className="nav-mobile-link" onClick={goToContatti}>
             contatti
           </a>
         </nav>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import CustomCursor from './components/CustomCursor'
+import IntroScreen from './components/IntroScreen'
 import Home from './pages/Home'
 import BioPage from './pages/BioPage'
 import ProgettiPage from './pages/ProgettiPage'
@@ -75,9 +76,20 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  // Show intro only on first visit of this session
+  const [showIntro, setShowIntro] = useState(
+    () => !sessionStorage.getItem('intro_seen')
+  )
+
+  const handleIntroDone = () => {
+    sessionStorage.setItem('intro_seen', '1')
+    setShowIntro(false)
+  }
+
   return (
     <BrowserRouter>
       <CustomCursor />
+      {showIntro && <IntroScreen onDone={handleIntroDone} />}
       <AnimatedRoutes />
     </BrowserRouter>
   )

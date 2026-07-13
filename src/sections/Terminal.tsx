@@ -174,7 +174,6 @@ export default function Terminal() {
         {[
           { name: 'portfolio personale', desc: 'design minimalista, animazioni curate, react + ts', url: null, year: '2026' },
           { name: 'microbank',           desc: 'dashboard bancaria, ux pulita, rest api',          url: null, year: '2025' },
-          { name: 'sito esame',         desc: 'sito per esame di stato, scroll effects, vanilla js', url: null, year: '2026' },
         ].map(p => (
           <span key={p.name} style={{ display: 'block' }}>
             <span style={{ color: t.promptSym, fontWeight: 700 }}>{p.name}</span>
@@ -362,6 +361,7 @@ export default function Terminal() {
 
         {/* terminal body */}
         <div
+          data-lenis-prevent
           style={{
             padding: '18px 20px', minHeight: '340px', maxHeight: '460px',
             overflowY: 'auto', fontSize: '13px', lineHeight: 1.7,

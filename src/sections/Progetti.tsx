@@ -40,18 +40,6 @@ const PROJECTS = [
     link: null,
   },
   {
-    id: 'esame',
-    title: 'sito esame di stato',
-    desc: 'identità visiva e presentazione interattiva per esame di stato. scroll effects e animazioni vanilla js.',
-    tags: ['html', 'css', 'vanilla js'],
-    year: '2026',
-    size: 'medium',
-    accent: '#10b981',
-    bg: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
-    emoji: '🎓',
-    link: null,
-  },
-  {
     id: 'nimbuscloud',
     title: 'nimbuscloud',
     desc: 'piattaforma cloud storage self-hosted. upload file, cartelle annidate, link di condivisione, reset password via otp, avatar e chat di supporto real-time.',
