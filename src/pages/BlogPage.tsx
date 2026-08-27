@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { posts } from '../data/posts'
@@ -29,8 +30,12 @@ export default function BlogPage() {
 
   return (
     <>
+      <SEO
+        title="Note"
+        description="Pensieri e riflessioni su design, sviluppo web e quello che imparo sbagliando. Nessuna cadenza fissa, solo quando ho qualcosa da dire."
+      />
       <Navbar />
-      <main style={{ minHeight: '100svh', paddingTop: '76px' }}>
+      <main style={{ minHeight: '100svh', paddingTop: '76px' }} id="main-content">
 
         {/* header */}
         <section style={{ padding: '6rem 2.5rem 4rem', maxWidth: '760px', margin: '0 auto' }}>

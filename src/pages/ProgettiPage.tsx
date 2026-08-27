@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import SEO from '../components/SEO'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import HeroVisual from '../components/HeroVisual'
@@ -71,7 +72,7 @@ function ProjectModal({ data, onClose }: { data: ProjectData; onClose: () => voi
         {/* image */}
         {data.image && (
           <div style={{ width: '100%', height: 220, overflow: 'hidden', position: 'relative' }}>
-            <img src={data.image} alt={data.title} style={{
+            <img src={data.image} alt={data.title} loading="lazy" style={{
               width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
               transition: 'transform 0.6s ease',
             }}
@@ -149,7 +150,7 @@ function ProjectCard({ project, index, delay = 0 }: { project: ProjectData; inde
         {/* image preview */}
         {project.image && (
           <div style={{ width: '100%', height: 200, overflow: 'hidden', position: 'relative', background: '#f8f8f8' }}>
-            <img src={project.image} alt={project.title} style={{
+            <img src={project.image} alt={project.title} loading="lazy" style={{
               width: '100%', height: '100%', objectFit: 'cover',
               transform: hover ? 'scale(1.06)' : 'scale(1)',
               transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1)',
@@ -209,8 +210,12 @@ export default function ProgettiPage() {
 
   return (
     <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', sans-serif", WebkitFontSmoothing: 'antialiased' } as React.CSSProperties}>
+      <SEO
+        title="Progetti"
+        description="Esplora i progetti web e le soluzioni digitali che ho progettato e sviluppato, tra cui NimbusCloud, una piattaforma cloud storage self-hosted."
+      />
       <Navbar />
-      <main style={{ paddingTop: '76px', overflowX: 'hidden' }}>
+      <main style={{ paddingTop: '76px', overflowX: 'hidden' }} id="main-content">
 
         {/* HERO */}
         <section className="progetti-hero" style={{

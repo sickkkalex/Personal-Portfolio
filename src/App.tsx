@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import SkipLink from './components/SkipLink'
+import Analytics from './components/Analytics'
 import CustomCursor from './components/CustomCursor'
 import IntroScreen from './components/IntroScreen'
 import Home from './pages/Home'
@@ -88,6 +90,8 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <SkipLink />
+      <Analytics />
       <CustomCursor />
       {showIntro && <IntroScreen onDone={handleIntroDone} />}
       <AnimatedRoutes />

@@ -127,7 +127,8 @@ export default function Navbar() {
 
       <nav style={navStyle}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-          onClick={() => { playSound('click'); window.scrollTo({ top: 0 }) }}>
+          onClick={() => { playSound('click'); window.scrollTo({ top: 0 }) }}
+          aria-label="Torna alla homepage">
           <img src="/logo.svg" alt="logo" style={{ height: '52px' }} />
         </Link>
 
@@ -146,7 +147,7 @@ export default function Navbar() {
 
           {/* social */}
           <div className="dropdown-trigger" style={{ position: 'relative' }}>
-            <button style={btnStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('open')}>social <IconChevron /></button>
+            <button style={btnStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('open')} aria-label="Menu social media" aria-haspopup="true">social <IconChevron /></button>
             <div className="dropdown-menu" style={dropStyle}>
               {[
                 { label: 'instagram', icon: <IconInstagram />, href: 'https://www.instagram.com/sickkkalex/' },
@@ -163,7 +164,7 @@ export default function Navbar() {
 
           {/* recapiti */}
           <div className="dropdown-trigger" style={{ position: 'relative' }}>
-            <button style={btnStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('open')}>recapiti <IconChevron /></button>
+            <button style={btnStyle} onMouseEnter={() => playSound('hover')} onClick={() => playSound('open')} aria-label="Menu recapiti email" aria-haspopup="true">recapiti <IconChevron /></button>
             <div className="dropdown-menu" style={{ ...dropStyle, minWidth: '220px' }}>
               {[
                 { label: 'email privata', sub: 'alessiosaulli4@gmail.com', href: 'mailto:alessiosaulli4@gmail.com' },

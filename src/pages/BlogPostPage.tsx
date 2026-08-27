@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { posts } from '../data/posts'
@@ -29,6 +30,16 @@ export default function BlogPostPage() {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        type="article"
+        article={{
+          publishedTime: post.date,
+          author: 'Alessio Saulli',
+          tag: post.tag,
+        }}
+      />
       <style>{`
         .prose h2 {
           font-size: clamp(1.1rem, 2.5vw, 1.35rem);
@@ -86,7 +97,7 @@ export default function BlogPostPage() {
       `}</style>
 
       <Navbar />
-      <main style={{ minHeight: '100svh', paddingTop: '76px' }}>
+      <main style={{ minHeight: '100svh', paddingTop: '76px' }} id="main-content">
         <article className="blog-article" style={{ maxWidth: '680px', margin: '0 auto', padding: '5rem 2.5rem 6rem' }}>
 
           {/* back link */}

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import SEO from '../components/SEO'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import HeroVisual from '../components/HeroVisual'
@@ -86,7 +87,7 @@ function Modal({ data, onClose }: { data: ModalData; onClose: () => void }) {
         {/* image */}
         {data.image && (
           <div style={{ width: '100%', height: 200, overflow: 'hidden', position: 'relative' }}>
-            <img src={data.image} alt={data.place} style={{
+            <img src={data.image} alt={data.place} loading="lazy" style={{
               width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
               transition: 'transform 0.6s ease',
             }}
@@ -253,9 +254,13 @@ export default function BioPage() {
 
   return (
     <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', sans-serif", WebkitFontSmoothing: 'antialiased' } as React.CSSProperties}>
+      <SEO
+        title="Chi Sono"
+        description="Alessio Saulli, 19 anni, web developer e designer da Bari. Formazione tecnica in informatica, esperienza freelance e Erasmus+ in Grecia. Scopri il mio percorso professionale."
+      />
       <Navbar />
 
-      <main style={{ paddingTop: '76px', overflowX: 'hidden' }}>
+      <main style={{ paddingTop: '76px', overflowX: 'hidden' }} id="main-content">
 
         {/* ── HERO ── */}
         <section className="bio-hero" style={{

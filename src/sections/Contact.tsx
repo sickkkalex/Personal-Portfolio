@@ -153,10 +153,10 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        'service_abt1ft6',
-        'template_dnzs89p',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         { from_name: name, from_email: email, message },
-        'r61QMVA-wyT0TPrhC',
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       setStatus('success')
       playSound('success')
@@ -303,7 +303,7 @@ export default function Contact() {
                       ti rispondo il prima possibile. <br />nel frattempo, dai un'occhiata ai miei progetti.
                     </p>
                   </div>
-                  <button onClick={handleReset} className="contact-submit-btn" style={{ background: 'transparent', color: '#000', border: '1px solid #d8d8d8' }}>
+                  <button onClick={handleReset} className="contact-submit-btn" style={{ background: 'transparent', color: '#000', border: '1px solid #d8d8d8' }} aria-label="Invia un altro messaggio">
                     invia un altro
                   </button>
                 </div>
@@ -316,13 +316,13 @@ export default function Contact() {
                   <p style={{ fontSize: '14px', color: '#000', letterSpacing: '-0.01em' }}>
                     qualcosa è andato storto. riprova o scrivimi direttamente.
                   </p>
-                  <button onClick={handleReset} className="contact-submit-btn" style={{ alignSelf: 'flex-start', background: 'transparent', color: '#000', border: '1px solid #d8d8d8' }}>
+                  <button onClick={handleReset} className="contact-submit-btn" style={{ alignSelf: 'flex-start', background: 'transparent', color: '#000', border: '1px solid #d8d8d8' }} aria-label="Riprova a inviare il messaggio">
                     riprova
                   </button>
                 </div>
               ) : (
                 /* ── form ── */
-                <form ref={formRef} onSubmit={handleSubmit} noValidate>
+                <form ref={formRef} onSubmit={handleSubmit} noValidate aria-label="Modulo di contatto">
                   <Field id="contact-name" label="nome" value={name} onChange={setName} delay={100} />
                   <Field id="contact-email" label="email" type="email" value={email} onChange={setEmail} delay={180} />
                   <Field id="contact-msg" label="messaggio" value={message} onChange={setMessage} multiline delay={260} />
@@ -335,6 +335,7 @@ export default function Contact() {
                       type="submit"
                       disabled={status === 'sending'}
                       className="contact-submit-btn"
+                      aria-label={status === 'sending' ? 'Invio del messaggio in corso' : 'Invia messaggio di contatto'}
                     >
                       {status === 'sending' ? (
                         <>

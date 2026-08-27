@@ -10,7 +10,7 @@ export default function Footer() {
         display: 'flex', justifyContent: 'space-between',
         alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem',
       }}>
-        <img src="/logo.svg" alt="logo" style={{ height: '36px', opacity: 0.4 }} />
+        <img src="/logo.svg" alt="logo" loading="lazy" style={{ height: '36px', opacity: 0.4 }} />
         <p style={{
           fontSize: '13px', fontStyle: 'italic', color: '#bbb',
           maxWidth: '380px', lineHeight: 1.65, textAlign: 'right', letterSpacing: '-0.01em',

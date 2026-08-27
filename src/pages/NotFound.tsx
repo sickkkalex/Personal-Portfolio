@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Navbar from '../components/Navbar'
 
 const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#abcdefghijklmnopqrstuvwxyz0123456789'
@@ -108,6 +109,10 @@ export default function NotFound() {
 
   return (
     <>
+      <SEO
+        title="404 — Pagina non trovata"
+        description="La pagina che stai cercando non esiste o è stata spostata."
+      />
       <style>{`
         @keyframes caretBlink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
         @keyframes glitchShift {
@@ -137,7 +142,7 @@ export default function NotFound() {
 
       <Navbar />
 
-      <main style={{
+      <main id="main-content" style={{
         minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center',
         padding: '100px 2.5rem 60px',
         background: '#fff',

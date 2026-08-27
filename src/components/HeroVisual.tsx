@@ -93,6 +93,7 @@ export default function HeroVisual() {
         <img
           src="/logo.png"
           alt="logo"
+          loading="lazy"
           style={{
             width: SIZE, height: SIZE,
             borderRadius: '50%',
